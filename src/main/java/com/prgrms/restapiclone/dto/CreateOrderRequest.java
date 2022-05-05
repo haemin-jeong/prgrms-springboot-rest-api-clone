@@ -5,7 +5,6 @@ import com.prgrms.restapiclone.entity.Address;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @AllArgsConstructor
@@ -19,6 +18,4 @@ public class CreateOrderRequest {
     private OrderStatus orderStatus;
 
     private List<OrderPartRequest> orderParts;
-
-    private LocalDateTime createdAt;
 }
