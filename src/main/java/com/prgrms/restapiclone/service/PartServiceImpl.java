@@ -18,4 +18,9 @@ public class PartServiceImpl implements PartService {
     public List<Part> findParts(Category category) {
         return partRepository.findByCategory(category);
     }
+
+    @Override
+    public Long addPart(Part part) {
+        return partRepository.save(part);
+    }
 }

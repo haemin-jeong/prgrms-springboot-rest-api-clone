@@ -8,4 +8,6 @@ import java.util.List;
 public interface PartService {
 
     List<Part> findParts(Category category);
+
+    Long addPart(Part part);
 }
