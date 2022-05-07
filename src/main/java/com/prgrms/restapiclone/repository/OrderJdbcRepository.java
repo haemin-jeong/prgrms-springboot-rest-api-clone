@@ -22,6 +22,7 @@ public class OrderJdbcRepository implements OrderRepository {
     private static final String INSERT_ORDER_PART_SQL = "INSERT INTO orders_part(part_id, order_id, price, quantity) VALUES(:partId, :orderId, :price, :quantity)";
     private static final String SELECT_ORDER_SQL = "SELECT * FROM orders";
     private static final String INSERT_ORDER_SQL = "INSERT INTO orders(email, order_status, address, zipcode) VALUES (:email, :orderStatus, :address, :zipcode)";
+    private static final String SELECT_ORDER_PART_SQL = "SELECT * FROM orders_part";
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -52,7 +53,7 @@ public class OrderJdbcRepository implements OrderRepository {
     }
 
     private Map<Long, List<OrderPart>> getOrderPartMap() {
-        List<OrderPart> orderParts = jdbcTemplate.query("SELECT * FROM orders_part", Collections.emptyMap(), orderPartRowMapper);
+        List<OrderPart> orderParts = jdbcTemplate.query(SELECT_ORDER_PART_SQL, Collections.emptyMap(), orderPartRowMapper);
 
         Map<Long, List<OrderPart>> orderPartMap = new HashMap<>();
 
