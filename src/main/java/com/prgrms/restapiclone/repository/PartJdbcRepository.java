@@ -50,9 +50,7 @@ public class PartJdbcRepository implements PartRepository {
     @Override
     public List<Part> findByCategory(Category category) {
         String selectSql = findByCategoryQueryBuilder(category);
-
-        return jdbcTemplate.query(selectSql,
-                Collections.singletonMap("category", category.name()), computerPartRowMapper);
+        return jdbcTemplate.query(selectSql, computerPartRowMapper);
     }
 
     private String findByCategoryQueryBuilder(Category category) {
