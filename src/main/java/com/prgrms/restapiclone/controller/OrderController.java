@@ -3,6 +3,7 @@ package com.prgrms.restapiclone.controller;
 import com.prgrms.restapiclone.dto.CreateOrderRequest;
 import com.prgrms.restapiclone.dto.OrderPartRequest;
 import com.prgrms.restapiclone.dto.OrderResponse;
+import com.prgrms.restapiclone.entity.Address;
 import com.prgrms.restapiclone.entity.Order;
 import com.prgrms.restapiclone.entity.OrderPart;
 import com.prgrms.restapiclone.service.OrderService;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,9 +33,10 @@ public class OrderController {
     }
 
     @PostMapping(value = "", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Long> createdOrder(@RequestBody CreateOrderRequest orderRequest) {
+    public ResponseEntity<Long> createdOrder(@Valid @RequestBody CreateOrderRequest orderRequest) {
         List<OrderPart> orderParts = convertToOrderPartsFromOrderRequests(orderRequest);
-        Long orderId = orderService.createOrder(orderRequest.getEmail(), orderRequest.getAddress(), orderParts);
+        Address address = new Address(orderRequest.getAddress(), orderRequest.getZipcode());
+        Long orderId = orderService.createOrder(orderRequest.getEmail(), address, orderParts);
         return ResponseEntity.ok(orderId);
     }
 

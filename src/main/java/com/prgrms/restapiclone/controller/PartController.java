@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,7 +32,7 @@ public class PartController {
     }
 
     @PostMapping(value = "", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Long> addParts(@RequestBody CreatePartRequest partRequest) {
+    public ResponseEntity<Long> addParts(@Valid @RequestBody CreatePartRequest partRequest) {
         Long partId = partService.addPart(partRequest.toEntity());
         return new ResponseEntity(partId, HttpStatus.CREATED);
     }

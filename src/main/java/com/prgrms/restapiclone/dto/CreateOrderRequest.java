@@ -1,21 +1,28 @@
 package com.prgrms.restapiclone.dto;
 
-import com.prgrms.restapiclone.OrderStatus;
-import com.prgrms.restapiclone.entity.Address;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @AllArgsConstructor
 @Getter
 public class CreateOrderRequest {
 
+    @Email
+    @NotEmpty
     private String email;
 
-    private Address address;
+    @NotEmpty
+    private String address;
 
-    private OrderStatus orderStatus;
+    @NotEmpty
+    private String zipcode;
 
-    private List<OrderPartRequest> orderParts;
+    @NotNull
+    private List<@Valid OrderPartRequest> orderParts;
 }
