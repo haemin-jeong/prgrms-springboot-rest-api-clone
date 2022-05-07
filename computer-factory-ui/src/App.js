@@ -42,10 +42,8 @@ function App() {
         } else {
             axios.post("http://localhost:8080/api/v1/orders", {
                 email: order.email,
-                address: {
-                    address: order.address,
-                    zipcode: order.zipcode
-                },
+                address: order.address,
+                zipcode: order.zipcode,
                 orderParts: items.map(v => ({
                     partId: v.partId,
                     category: v.category,
