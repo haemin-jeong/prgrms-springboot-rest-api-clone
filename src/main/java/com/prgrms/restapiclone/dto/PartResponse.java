@@ -11,7 +11,7 @@ public class PartResponse {
 
     private Long partId;
     private String name;
-    private long price;
+    private Long price;
     private Category category;
 
     public static PartResponse from(Part part) {
