@@ -1,6 +1,6 @@
 package com.prgrms.restapiclone.repository;
 
-import com.prgrms.restapiclone.Category;
+import com.prgrms.restapiclone.entity.Category;
 import com.prgrms.restapiclone.entity.Part;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;

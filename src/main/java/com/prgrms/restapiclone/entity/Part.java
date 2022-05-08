@@ -1,6 +1,5 @@
 package com.prgrms.restapiclone.entity;
 
-import com.prgrms.restapiclone.Category;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

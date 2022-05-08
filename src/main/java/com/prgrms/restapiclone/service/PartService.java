@@ -1,6 +1,6 @@
 package com.prgrms.restapiclone.service;
 
-import com.prgrms.restapiclone.Category;
+import com.prgrms.restapiclone.entity.Category;
 import com.prgrms.restapiclone.entity.Part;
 
 import java.util.List;

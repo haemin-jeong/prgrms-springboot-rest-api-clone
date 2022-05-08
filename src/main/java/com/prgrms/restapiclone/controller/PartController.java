@@ -1,6 +1,6 @@
 package com.prgrms.restapiclone.controller;
 
-import com.prgrms.restapiclone.Category;
+import com.prgrms.restapiclone.entity.Category;
 import com.prgrms.restapiclone.dto.CreatePartRequest;
 import com.prgrms.restapiclone.dto.PartResponse;
 import com.prgrms.restapiclone.entity.Part;

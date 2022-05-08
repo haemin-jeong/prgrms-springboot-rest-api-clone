@@ -1,6 +1,6 @@
 package com.prgrms.restapiclone.service;
 
-import com.prgrms.restapiclone.OrderStatus;
+import com.prgrms.restapiclone.entity.OrderStatus;
 import com.prgrms.restapiclone.entity.Address;
 import com.prgrms.restapiclone.entity.Order;
 import com.prgrms.restapiclone.entity.OrderPart;

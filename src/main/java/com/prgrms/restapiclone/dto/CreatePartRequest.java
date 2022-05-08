@@ -1,6 +1,6 @@
 package com.prgrms.restapiclone.dto;
 
-import com.prgrms.restapiclone.Category;
+import com.prgrms.restapiclone.entity.Category;
 import com.prgrms.restapiclone.entity.Part;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

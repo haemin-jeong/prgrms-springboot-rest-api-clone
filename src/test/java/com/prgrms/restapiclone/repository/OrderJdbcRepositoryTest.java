@@ -1,7 +1,7 @@
 package com.prgrms.restapiclone.repository;
 
-import com.prgrms.restapiclone.Category;
-import com.prgrms.restapiclone.OrderStatus;
+import com.prgrms.restapiclone.entity.Category;
+import com.prgrms.restapiclone.entity.OrderStatus;
 import com.prgrms.restapiclone.config.TestConfiguration;
 import com.prgrms.restapiclone.entity.Address;
 import com.prgrms.restapiclone.entity.Order;
